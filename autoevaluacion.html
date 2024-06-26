@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Conducta Alimentaria</title>
+    <link rel="icon" href="imagenes/icono.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/test.js"></script>
+</head>
+
+<body class="fondo">
+  <header>
+    <nav>
+      <h1>Trastorno de la Conducta Alimentaria</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobreTCA.html">Sobre los TCA</a></li>
+        <li><a href="recursosEducativos.html">Recursos Educativos</a></li>
+        <li><a href="autoevaluacion.html">Test de Autoevaluación</a></li>
+        <li><a href="tratamiento.html">Tratamiento</a></li>
+        <li><a href="historias.html">Historias de Recuperación</a></li>
+        <li><a href="juegos.html">Juegos</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+  <main class="container">
+    <h1 style="text-shadow: 3px 2px 4px #a5a5a5;">Test de Autoevaluación</h1>
+    <div class="test-container">      
+      <form>
+         <ol>
+          <li>¿Te preocupas excesivamente por tu peso o cuerpo?</li>
+          <label><input type="radio" name="q1" value="si"> Sí</label> 
+          <label><input type="radio" name="q1" value="no"> No</label>
+          <br><br>
+
+          <li>¿Has intentado perder peso reduciendo la cantidad de comida que consumes o utilizando métodos extremos como ayunos o purgas?</li>
+          <label><input type="radio" name="q2" value="si"> Sí</label>
+          <label><input type="radio" name="q2" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Te sientes culpable o avergonzado después de comer?</li>
+          <label><input type="radio" name="q3" value="si"> Sí</label>
+          <label><input type="radio" name="q3" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Evitas comer en público o en presencia de otras personas?</li>
+          <label><input type="radio" name="q4" value="si"> Sí</label>
+          <label><input type="radio" name="q4" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Te pesas con frecuencia o te obsesionas con la cantidad de comida que consumes?</li>
+          <label><input type="radio" name="q5" value="si"> Sí</label>
+          <label><input type="radio" name="q5" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Has experimentado mareos, fatiga extrema o cambios de humor debido a la restricción alimentaria?</li>
+          <label><input type="radio" name="q6" value="si"> Sí</label>
+          <label><input type="radio" name="q6" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Sientes que debes tener un control sobre lo que comes o que la comida controla tu vida?</li>
+          <label><input type="radio" name="q7" value="si"> Sí</label>
+          <label><input type="radio" name="q7" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Has notado cambios significativos en tu peso en un corto período de tiempo?</li>
+          <label><input type="radio" name="q8" value="si"> Sí</label>
+          <label><input type="radio" name="q8" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Te sientes mal contigo mismo/a si no puedes seguir una dieta o régimen alimentario estricto?</li>
+          <label><input type="radio" name="q9" value="si"> Sí</label>
+          <label><input type="radio" name="q9" value="no"> No</label> 
+          <br><br>
+
+          <li>¿Tu autoestima está fuertemente influenciada por tu peso o tu apariencia física?</li>
+          <label><input type="radio" name="q10" value="si"> Sí</label>
+          <label><input type="radio" name="q10" value="no"> No</label>
+          <br> 
+        </ol>
+        <center><button type="button" onclick="calcularResultado()">Obtener Resultado</button></center>
+        <div id="resultado"></div>
+      </form> 
+           
+      </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Página sobre Trastornos de la Conducta Alimentaria. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>

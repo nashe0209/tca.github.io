@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos Educativos</title>
+  <link rel="icon" href="imagenes/icono.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts/test.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>Trastorno de la Conducta Alimentaria</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobreTCA.html">Sobre los TCA</a></li>
+          <li><a href="recursosEducativos.html">Recursos Educativos</a></li>
+          <li><a href="autoevaluacion.html">Test de Autoevaluación</a></li>
+          <li><a href="tratamiento.html">Tratamiento</a></li>
+          <li><a href="historias.html">Historias de Recuperación</a></li>
+          <li><a href="juegos.html">Juegos</a></li>
+        </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <h1 style="text-shadow: 3px 2px 4px #a5a5a5;">Test de Conocimiento</h1>
+
+    <div class="video-container">
+      <video controls src="videos/202405200048.mov" width="55%" style="border-radius: 30px;"></video>
+    </div>
+    
+    <div class="test-container">      
+      <p><strong>Ve el video y responde correctamente las preguntas:</strong></p>
+      <form>
+        <ol>
+          <li>¿Qué son los TCA?</li>
+          <label><input type="radio" name="q1" value="si">Enfermedad mental que afecta la relación con la comida.</label> <br>
+          <label><input type="radio" name="q1" value="no">Una dieta de moda.</label><br>
+          <label><input type="radio" name="q1" value="no">Un programa de ejercicio.</label><br>
+          <br>
+
+          <li>¿Cuál es un factor de riesgo para desarrollar un TCA?</li>
+          <label><input type="radio" name="q2" value="no">Alta autoestima.</label> <br>
+          <label><input type="radio" name="q2" value="si">Presión social.</label><br>
+          <label><input type="radio" name="q2" value="no">Alimentacón saludable.</label><br>
+          <br>
+
+          <li>¿Cuáles son algunos síntomas de los TCA?</li>
+          <label><input type="radio" name="q3" value="no">Relación saludable con la comida</label> <br>
+          <label><input type="radio" name="q3" value="si">Restricción alimentaria severa.</label><br>
+          <label><input type="radio" name="q3" value="no">Sentirse bien con su cuerpo.</label> <br>
+        </ol>
+        <center><button type="button" onclick="resultadoVideo()">Obtener Resultado</button></center>
+        <div id="resultadoVideo"></div>
+      </form> 
+    </div>
+
+    
+
+
+    <div class="video-container" style="max-width: 600px; margin: auto;">
+      <center><img src="imagenes/giphy.gif" width="200px" ></center>
+      <audio controls src="audios/Tipos.mp3"></audio>
+    </div>
+
+    <div class="test-container">      
+      <p><strong>Escucha el audio y responde correctamente las preguntas:</strong></p>
+      <form>
+        <ol>
+          <li>¿Qué trastorno de la conducta alimentaria se caracteriza por un miedo intenso a aumentar de peso y una restricción extrema de la ingesta de alimentos?</li>
+          <label><input type="radio" name="qq1" value="no">Bulimia Nerviosa</label> <br>
+          <label><input type="radio" name="qq1" value="no">Trastorno por Atracón</label><br>
+          <label><input type="radio" name="qq1" value="si"> Anorexia Nerviosa</label><br>
+          <label><input type="radio" name="qq1" value="no"> Ninguna de las anteriores</label><br>
+          <br>
+  
+          <li>¿Cuál de los siguientes trastornos de la conducta alimentaria implica episodios recurrentes de comer en exceso seguidos de comportamientos para eliminar las calorías consumidas?</li>
+          <label><input type="radio" name="qq2" value="no">Anorexia Nerviosa</label> <br>
+          <label><input type="radio" name="qq2" value="no">Trastorno por Atracón</label><br>
+          <label><input type="radio" name="qq2" value="si">Bulimia Nerviosa</label><br>
+          <label><input type="radio" name="qq2" value="no">Ninguna de las anteriores</label><br>
+          <br>
+  
+          <li>¿Qué tipo de trastorno de la conducta alimentaria implica comer grandes cantidades de comida en un período corto de tiempo, acompañado de una sensación de falta de control, pero sin comportamientos purgativos?</li>
+          <label><input type="radio" name="qq3" value="no">Bulimia Nerviosa</label> <br>
+          <label><input type="radio" name="qq3" value="no">Anorexia Nerviosa</label><br>
+          <label><input type="radio" name="qq3" value="si">Trastorno por Atracón </label><br>
+          <label><input type="radio" name="qq3" value="no">Ninguna de las anteriores</label><br>
+          <br>
+  
+          <li>¿Qué se recomienda hacer si tú o alguien que conoces está luchando contra uno de estos trastornos de la conducta alimentaria?</li>
+          <label><input type="radio" name="qq4" value="si">Buscar ayuda profesional</label> <br>
+          <label><input type="radio" name="qq4" value="no">Ignorar el problema y esperar que desaparezca</label><br>
+          <label><input type="radio" name="qq4" value="no">Tratar de resolverlo por tu cuenta</label><br>
+          <label><input type="radio" name="qq4" value="no">Ninguna de las anteriores</label><br>
+          <br>
+  
+          <li>¿Qué tipo de trastorno de la conducta alimentaria es más comúnmente asociado con la percepción distorsionada del propio cuerpo?</li>
+          <label><input type="radio" name="qq5" value="no">Trastorno por Atracón</label> <br>
+          <label><input type="radio" name="qq5" value="si">Anorexia Nerviosa</label><br>
+          <label><input type="radio" name="qq5" value="no">Bulimia Nerviosa</label><br>
+          <label><input type="radio" name="qq5" value="no">Ninguna de las anteriores</label><br>
+          <br>
+        </ol>
+        <center><button type="button" onclick="resultadoAudio()">Obtener Resultado</button></center>
+        <div id="resultadoAudio"></div>
+      </form> 
+    </div>
+
+  </main>
+    
+  <footer>
+    <p>&copy; 2024 Página sobre Trastornos de la Conducta Alimentaria. Todos los derechos reservados.</p>
+  </footer>
+</body>
+

@@ -1,0 +1,155 @@
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: 'Montserrat', sans-serif;
+
+    background-image: url('imagenes/5153829.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra toda la ventana */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen de fondo se quede fija mientras se desplaza el contenido */
+    background-position: center; /* Centra la imagen en la ventana */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Estilos para el encabezado */
+header {
+    background-color: #4d98e8; /* Azul claro */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav h1 {
+    font-size: 42px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    font-size: 18px;
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fffcfc;
+    text-decoration: none;
+}
+
+/* Cambio de estilo al pasar el ratón sobre el botón */
+a:hover {
+    color: #97b9dd; /* Un tono más oscuro del azul claro */
+    font-size: 17px;
+}
+
+/* Estilos para el contenido principal */
+.container {
+    font-size: 16px;
+    color: black;
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+}
+
+.container h1 {
+    color: #4d98e8; /* Azul claro */
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.video-container{
+    text-align: center;
+    padding: 10px;
+}
+
+.info {
+    background-color: #ffffff; /* Blanco */
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.23); /* Sombra más suave */
+    line-height: 1.6;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.test-container {
+    font-size: 16px;
+    color: black;
+    max-width: 700px;
+    margin: auto;
+    background-color: #ffffff; /* Blanco */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.23); /* Sombra más suave */
+    line-height: 1.8;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.question {
+    color: #599de6; /* Azul claro */
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+main {
+    padding: 25px;
+}
+
+main h1 {
+    color: #4d98e8; /* Azul claro */
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+main h2 {
+    color: #4d98e8; /* Azul claro */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+main p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+main ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+main li {
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #4d98e8; /* Azul claro */
+    border: none;
+    color: white;
+    padding: 15px; /* Espacio interno */
+    text-align: center; 
+    font-size: 17px; /* Tamaño del texto */
+    margin: 2px 2px; /* Margen exterior */
+    cursor: pointer; /* Cursor al pasar */
+    border-radius: 25px; /* Borde redondeado */
+}
+
+/* Estilos para el pie de página */
+footer {
+    font-size: 18px;
+    background-color: #4d98e8; /* Azul claro */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}

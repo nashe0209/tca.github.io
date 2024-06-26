@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Parejas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 5px;
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.247);
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 600px;
+            margin-top: 10px;
+        }
+
+        .card {
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            background-color: #2984e4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
+        }
+
+        .matched {
+            background-color: #00c08a;
+            pointer-events: none;
+        }
+
+        .hidden {
+            background-color: #2984e4;
+            color: transparent;
+        }
+
+        .revealed {
+            color: white;
+        }
+
+        .error {
+            background-color: #ff0037;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #2984e4;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #2984e4;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #006bb3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Trastorno de la Conducta Alimentaria</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobreTCA.html">Sobre los TCA</a></li>
+                <li><a href="recursosEducativos.html">Recursos Educativos</a></li>
+                <li><a href="autoevaluacion.html">Test de Autoevaluación</a></li>
+                <li><a href="tratamiento.html">Tratamiento</a></li>
+                <li><a href="historias.html">Historias de Recuperación</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="game-container">
+        <h1>Juego de Parejas</h1>
+        <div id="gameContainer" class="cards-container"></div>
+        <div id="message" class="message"></div>
+        <div class="button-container">
+            <button id="restartButton" class="button" onclick="startGame()">Reiniciar Juego</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Página sobre Trastornos de la Conducta Alimentaria. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const terms = [
+            { term: 'Anorexia', definition: 'Restricción severa de la ingesta de alimentos.' },
+            { term: 'Bulimia', definition: 'Episodios de atracones seguidos de purgas.' },
+            { term: 'Atracones', definition: 'Consumo de grandes cantidades de comida en poco tiempo.' },
+            { term: 'Purgas', definition: 'Vómitos autoinducidos o uso excesivo de laxantes.' },
+            { term: 'Imagen Corporal', definition: 'Percepción que una persona tiene de su propio cuerpo.' },
+            { term: 'Trastorno Evitativo', definition: 'Evitación persistente de ciertos alimentos.' }
+        ];
+
+        let firstCard = null;
+        let secondCard = null;
+        let matches = 0;
+        let lockBoard = false;
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function createCard(content, type) {
+            const card = document.createElement('div');
+            card.className = 'card hidden';
+            card.dataset.content = content.term;
+            card.dataset.type = type;
+            card.innerText = type === 'term' ? content.term : content.definition;
+            card.addEventListener('click', () => revealCard(card));
+            return card;
+        }
+
+        function revealCard(card) {
+            if (lockBoard || card.classList.contains('revealed') || card.classList.contains('matched')) {
+                return;
+            }
+
+            card.classList.remove('hidden', 'error');
+            card.classList.add('revealed');
+
+            if (!firstCard) {
+                firstCard = card;
+            } else {
+                secondCard = card;
+                lockBoard = true;
+                checkMatch();
+            }
+        }
+
+        function checkMatch() {
+            const message = document.getElementById('message');
+            const isMatch = firstCard.dataset.content === secondCard.dataset.content;
+            if (isMatch) {
+                firstCard.classList.add('matched');
+                secondCard.classList.add('matched');
+                matches += 1;
+                message.textContent = '¡Correcto!';
+                message.style.color = '#00c08a';
+                message.style.fontSize = '25px';
+                resetBoard();
+                checkWin();
+            } 
+            else {
+                firstCard.classList.add('error');
+                secondCard.classList.add('error');
+                message.textContent = 'Intenta de nuevo!';
+                message.style.color = '#ff0037';
+                message.style.fontSize = '25px';
+                setTimeout(() => {
+                    firstCard.classList.remove('revealed', 'error');
+                    secondCard.classList.remove('revealed', 'error');
+                    firstCard.classList.add('hidden');
+                    secondCard.classList.add('hidden');
+                    resetBoard();
+                    message.textContent = '';
+                }, 2000);
+            }
+        }
+
+        function resetBoard() {
+            [firstCard, secondCard, lockBoard] = [null, null, false];
+        }
+
+        function checkWin() {
+            if (matches === terms.length) {
+                document.getElementById('message').textContent = '¡Ganaste!';
+                document.getElementById('message').style.color = '#029971';
+                document.getElementById('message').style.fontSize = '35px';
+            }
+        }
+
+        function startGame() {
+            const gameContainer = document.getElementById('gameContainer');
+            gameContainer.innerHTML = '';
+            document.getElementById('message').textContent = '';
+            matches = 0;
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+
+            const cards = [];
+
+            terms.forEach(term => {
+                cards.push(createCard(term, 'term'));
+                cards.push(createCard(term, 'definition'));
+            });
+
+            shuffle(cards);
+            cards.forEach(card => gameContainer.appendChild(card));
+        }
+
+        startGame();
+    </script>
+</body>
+
+</html>
